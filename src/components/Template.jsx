@@ -7,7 +7,7 @@ import ProfilePage from './account/ProfilePage';
 
 export default function Template() {
   return (
-      <Router>
+    <Router>
       <div className="wrapper">
         <Header username="anonymous" />
         <Route exact path="/" component={HomePage} />
