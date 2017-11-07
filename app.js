@@ -1,8 +1,6 @@
-// load dependencies
 const express = require('express');
 const path = require('path');
-
-// const favicon = require('serve-favicon');
+const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -21,12 +19,11 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const User = require('./models/user');
 
-// Define routes
 const index = require('./routes/index');
 const api = require('./routes/api/index');
 const users = require('./routes/api/users');
+const authentication = require('./routes/api/authentication');
 
-// Bind express router to app
 const app = express();
 
 // Connect to Mongoose
@@ -63,6 +60,7 @@ app.use(webpackHotMiddleware(webpackCompiler, {
 
 app.use('/api', api);
 app.use('/api/users', users);
+app.use('/api/authentication', authentication);
 app.use('/*', index);
 
 // Configure Passport
