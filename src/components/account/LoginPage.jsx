@@ -45,7 +45,7 @@ export default class ProfilePage extends React.Component {
                 type="email"
                 name="email"
                 id="userEmail"
-                placeholder= "noreply@musiclist.com"
+                placeholder="noreply@musiclist.com"
                 value={this.state.email}
                 onChange={this.handleEmailChange}
               />
