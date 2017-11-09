@@ -20,13 +20,13 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 require('babel-register');
 
-
-const User = require('./models/user');
-
-const index = require('./routes/index');
+// Route files
 const api = require('./routes/api/index');
-const users = require('./routes/api/users');
+const albums = require('./routes/api/albums');
 const authentication = require('./routes/api/authentication');
+const index = require('./routes/index');
+const User = require('./models/user');
+const users = require('./routes/api/users');
 
 const app = express();
 
@@ -65,6 +65,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 app.use('/api', api);
+app.use('/api/albums', albums);
 app.use('/api/users', users);
 app.use('/api/authentication', authentication);
 app.use('/*', index);
