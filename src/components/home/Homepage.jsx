@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 
-import Sidebar from '../shared/Sidebar';
+import SidebarContainer from '../shared/SidebarContainer';
 
 export default function HomePage(props) {
   const { decrementFunction, incrementFunction } = props;
@@ -11,7 +11,7 @@ export default function HomePage(props) {
         <Button onClick={incrementFunction}>Increment</Button>
         <Button onClick={decrementFunction}>Decrement</Button>
       </div>
-      <Sidebar />
+      <SidebarContainer />
     </div>
   );
 }

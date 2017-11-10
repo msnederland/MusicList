@@ -41,4 +41,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(LoginPageContainer)
+export default connect(mapStateToProps)(LoginPageContainer);
